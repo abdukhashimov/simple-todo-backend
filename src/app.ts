@@ -20,9 +20,9 @@ app.use(bodyParser.json())
 app.use('/', swagger)
 app.use(routes)
 app.get('/status', (req: Request, res: Response) => {
-  res.json({
-    stauts: 'OK',
-  })
+    res.json({
+        stauts: 'OK',
+    })
 })
 
 // app.use(rootRoute)

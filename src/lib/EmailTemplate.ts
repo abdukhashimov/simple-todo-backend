@@ -1,12 +1,12 @@
 export const verificationEmailTemplate = (
-  verifyCode: string,
-  email: string
+    verifyCode: string,
+    email: string
 ) => {
-  const mailOptions = {
-    from: 'Bizdan :)',
-    to: email,
-    subject: 'Email Verification',
-    html: `
+    const mailOptions = {
+        from: 'Bizdan :)',
+        to: email,
+        subject: 'Email Verification',
+        html: `
         <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -195,23 +195,23 @@ export const verificationEmailTemplate = (
       </table>
     </body>
     `,
-  }
-  return mailOptions
+    }
+    return mailOptions
 }
 
 export const forgotPasswordEmailTemplate = (
-  verifyCode: string,
-  email: string
+    verifyCode: string,
+    email: string
 ) => {
-  const mailOptions = {
-    from: 'youremail@gmail.com',
-    to: email,
-    subject: 'Forgot Password',
-    html: `
+    const mailOptions = {
+        from: 'youremail@gmail.com',
+        to: email,
+        subject: 'Forgot Password',
+        html: `
       <h2>Please, click the button below to confirm your email</h2>
       <p>That was easy!</p>
       <button><a href="http://localhost:3000/auth/activate/${verifyCode}">Click to confirm</a></button>
     `,
-  }
-  return mailOptions
+    }
+    return mailOptions
 }

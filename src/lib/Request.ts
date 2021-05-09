@@ -1,9 +1,9 @@
-import { Request } from "express";
-import { IUser } from "../models/User";
+import { Request } from 'express'
+import { IUser } from '../models/User'
 interface ISession {
-  user?: IUser;
+    user?: IUser
 }
 
 export interface IRequest extends Request {
-  session?: ISession;
+    session?: ISession
 }
