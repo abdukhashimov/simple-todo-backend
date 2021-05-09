@@ -8,17 +8,22 @@ export default class {
     constructor() {
         this.auth = new Auth()
     }
+
     async signUp(req: Request, res: Response, next: NextFunction) {
         try {
             const existingUser: IUser = await User.findOne({
                 email: req.body.email,
             })
+
             if (existingUser) {
                 return new ApiResponse(res).error(400, 'USER_EXIST')
             }
+
             let verifyCode: string = verifyEmail()
+
             req.body.verifyCode = verifyCode
             const savedUser: IUser = await User.create(req.body)
+
             return new ApiResponse(res).success(savedUser)
         } catch (e) {
             return new ApiResponse(res).error(500, 'SERVER_ERROR')
